@@ -1,3 +1,5 @@
+写完才发现，官方3月12号已经支持了，大家可以跟进官方新仓库，此库不再更新
+https://github.com/mit-han-lab/ComfyUI-nunchaku
 # EGSVD LoRA 工具 / EGSVD LoRA Tools
 
 [English](#english-version) | [中文](#中文版本)
