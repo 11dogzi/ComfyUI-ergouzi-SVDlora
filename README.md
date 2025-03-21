@@ -35,6 +35,7 @@ Parameters:
 - `lora_strength`: Intensity of LoRA effect
 - `lora_format`: Format of source LoRA file (auto, comfyui, diffusers, xlab)
 - `save_to_lora_dir`: Whether to save converted LoRA to original directory
+- `skip_conversion`: Whether to skip conversion (True: use selected model directly, False: follow normal conversion logic)
 
 ### Supported Model Types
 - svdq-int4-flux.1-dev
@@ -84,6 +85,7 @@ EGSVD LoRA 工具是一个 ComfyUI 扩展，用于转换和加载与量化 SVD �
 - `lora_strength`：LoRA 效果强度
 - `lora_format`：源 LoRA 文件格式（auto、comfyui、diffusers、xlab）
 - `save_to_lora_dir`：是否将转换后的 LoRA 保存到原始目录
+- `skip_conversion`：是否跳过转换（True：直接使用选择的模型，False：按照正常逻辑进行转换）
 
 ### 支持的模型类型
 - svdq-int4-flux.1-dev

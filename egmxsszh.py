@@ -102,6 +102,10 @@ class EGSVDloraSHZH:
                     "BOOLEAN",
                     {"default": False, "tooltip": "Whether to save the converted model to the LoRA directory"}
                 ),
+                "skip_conversion": (
+                    "BOOLEAN",
+                    {"default": False, "tooltip": "True: Use selected model directly without conversion, False: Follow existing logic"}
+                ),
             }
         }
 
@@ -113,7 +117,7 @@ class EGSVDloraSHZH:
     CATEGORY = "2🐕/SVDLoRA"
     DESCRIPTION = "Real time conversion and loading of LoRA, no need to convert and save in advance, suitable for SVDQ quantization models"
 
-    def convert_and_load_lora(self, model, lora_name, model_type, lora_strength, lora_format="auto", save_to_lora_dir=False):
+    def convert_and_load_lora(self, model, lora_name, model_type, lora_strength, lora_format="auto", save_to_lora_dir=False, skip_conversion=False):
         if lora_name == "None":
             model.model.diffusion_model.model.set_lora_strength(0)
             self.cur_lora_name = "None"
@@ -121,7 +125,7 @@ class EGSVDloraSHZH:
             
         need_convert = (self.cur_lora_name != lora_name) or (self.cur_model_type != model_type)
         
-        if need_convert:
+        if need_convert and not skip_conversion:
             try:
                 try:
                     lora_path = folder_paths.get_full_path_or_raise("loras", lora_name)
