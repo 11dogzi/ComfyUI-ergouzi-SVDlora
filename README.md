@@ -108,5 +108,5 @@ EGSVD LoRA 工具是一个 ComfyUI 扩展，用于转换和加载与量化 SVD �
 There are example workflows in the workflow file     
 将lora转换节点串联至模型加载之后 ，并选择当前使用的对应型号   
 Connect the Lora conversion nodes in series to the model after loading, and select the corresponding model currently in use    
-![灵仙儿和二狗子](image/image1.jpg "image1")     
-![灵仙儿和二狗子](image/image2.jpg "image2")     
+![灵仙儿和二狗子](image/image1.PNG "image1")     
+![灵仙儿和二狗子](image/image2.PNG "image2")     
