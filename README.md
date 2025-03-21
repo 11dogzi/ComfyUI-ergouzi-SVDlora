@@ -5,14 +5,14 @@
 ## English Version
 
 ### Introduction
-EGSVD LoRA Tools is a ComfyUI extension for converting and loading LoRA files with quantized SVD models. It provides two nodes that allow you to convert regular LoRAs to be compatible with quantized SVD models, and load them directly without pre-conversion.
+EGSVD LoRA Tools is a ComfyUI extension for converting and loading LoRA files with quantized SVD models. It provides a node that allows you to convert and load regular LoRAs to be compatible with quantized SVD models in real-time.
 
 ### Features
-- Convert standard LoRA files to SVDQ compatible format
 - Real-time LoRA conversion and loading
 - Support for multiple quantized model types
 - Adjustable LoRA strength
 - Support for different LoRA formats (ComfyUI, Diffusers, XLab)
+- Option to save converted LoRAs to cache or original directory
 
 ### Installation
 1. Make sure you have ComfyUI installed
@@ -25,18 +25,8 @@ EGSVD LoRA Tools is a ComfyUI extension for converting and loading LoRA files wi
 
 ### Usage
 
-#### 2🐕SVDLoRAZHBC Node
-This node converts a standard LoRA file to a format compatible with quantized SVD models and saves it to disk.
-
-Parameters:
-- `quant_model_type`: Type of quantized model
-- `lora_path`: Path to source LoRA file
-- `output_root`: Directory to save converted LoRA
-- `lora_name`: Name for the converted LoRA file (optional)
-- `lora_format`: Format of source LoRA file (auto, diffusers, comfyui, xlab)
-
 #### 2🐕SVDLoRASSZH Node
-This node performs real-time conversion and loading of LoRA files, without the need to convert and save in advance.
+This node performs real-time conversion and loading of LoRA files.
 
 Parameters:
 - `model`: Diffusion model to apply LoRA to
@@ -44,6 +34,7 @@ Parameters:
 - `model_type`: Type of quantized model
 - `lora_strength`: Intensity of LoRA effect
 - `lora_format`: Format of source LoRA file (auto, comfyui, diffusers, xlab)
+- `save_to_lora_dir`: Whether to save converted LoRA to original directory
 
 ### Supported Model Types
 - svdq-int4-flux.1-dev
@@ -63,14 +54,14 @@ Parameters:
 ## 中文版本
 
 ### 简介
-EGSVD LoRA 工具是一个 ComfyUI 扩展，用于转换和加载与量化 SVD 模型兼容的 LoRA 文件。它提供了两个节点，允许您将常规 LoRA 转换为与量化 SVD 模型兼容的格式，并且无需预先转换即可直接加载它们。
+EGSVD LoRA 工具是一个 ComfyUI 扩展，用于转换和加载与量化 SVD 模型兼容的 LoRA 文件。它提供了一个节点，可以实时转换和加载常规 LoRA 使其与量化 SVD 模型兼容。
 
 ### 特点
-- 将标准 LoRA 文件转换为 SVDQ 兼容格式
 - 实时 LoRA 转换和加载
 - 支持多种量化模型类型
 - 可调节的 LoRA 强度
 - 支持不同的 LoRA 格式（ComfyUI、Diffusers、XLab）
+- 可选择将转换后的 LoRA 保存到缓存或原始目录
 
 ### 安装
 1. 确保已安装 ComfyUI
@@ -83,18 +74,8 @@ EGSVD LoRA 工具是一个 ComfyUI 扩展，用于转换和加载与量化 SVD �
 
 ### 使用方法
 
-#### 2🐕SVDLoRAZHBC 节点
-此节点将标准 LoRA 文件转换为与量化 SVD 模型兼容的格式，并保存到磁盘。
-
-参数：
-- `quant_model_type`：量化模型类型
-- `lora_path`：源 LoRA 文件路径
-- `output_root`：保存转换后 LoRA 的目录
-- `lora_name`：转换后 LoRA 文件的名称（可选）
-- `lora_format`：源 LoRA 文件格式（auto、diffusers、comfyui、xlab）
-
 #### 2🐕SVDLoRASSZH 节点
-此节点执行 LoRA 文件的实时转换和加载，无需提前转换和保存。
+此节点执行 LoRA 文件的实时转换和加载。
 
 参数：
 - `model`：要应用 LoRA 的扩散模型
@@ -102,6 +83,7 @@ EGSVD LoRA 工具是一个 ComfyUI 扩展，用于转换和加载与量化 SVD �
 - `model_type`：量化模型类型
 - `lora_strength`：LoRA 效果强度
 - `lora_format`：源 LoRA 文件格式（auto、comfyui、diffusers、xlab）
+- `save_to_lora_dir`：是否将转换后的 LoRA 保存到原始目录
 
 ### 支持的模型类型
 - svdq-int4-flux.1-dev
